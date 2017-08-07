@@ -1,0 +1,258 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/9b2eec5/
+ACTIVE_SECONDS	../selfspy-vis/selfvis.py	/^ACTIVE_SECONDS = 180$/;"	kind:variable	line:60
+ACTIVE_SECONDS	../selfspy/selfspy/stats.py	/^ACTIVE_SECONDS = 180$/;"	kind:variable	line:45
+ACTIVITY_ACTIONS	../selfspy-vis/selfvis.py	/^ACTIVITY_ACTIONS = {'active', 'periods', 'pactive', 'tactive', 'ratios'}$/;"	kind:variable	line:62
+ACTIVITY_ACTIONS	../selfspy/selfspy/stats.py	/^ACTIVITY_ACTIONS = {'active', 'periods', 'pactive', 'tactive', 'ratios'}$/;"	kind:variable	line:47
+ActivityStore	../selfspy/selfspy/activity_store.py	/^class ActivityStore:$/;"	kind:class	line:56
+AppDelegate	../selfspy/selfspy/sniff_cocoa.py	/^        class AppDelegate(NSObject):$/;"	kind:class	line:57
+BUTTON_MAP	../selfspy-vis/selfvis.py	/^BUTTON_MAP = [('button1', 'left'),$/;"	kind:variable	line:68
+BUTTON_MAP	../selfspy/selfspy/stats.py	/^BUTTON_MAP = [('button1', 'left'),$/;"	kind:variable	line:53
+Base	../selfspy/selfspy/models.py	/^Base = declarative_base()$/;"	kind:variable	line:39
+Click	../selfspy/selfspy/models.py	/^class Click(SpookMixin, Base):$/;"	kind:class	line:94
+DATA_DIR	../data/config.py	/^DATA_DIR = '\/Users\/nmudivar\/Documents\/QuantifiedSelf\/data'$/;"	kind:variable	line:21
+DATA_DIR	../selfspy/selfspy/config.py	/^DATA_DIR = '~\/.selfspy'$/;"	kind:variable	line:20
+DBNAME	../data/config.py	/^DBNAME = 'selfspy.sqlite'$/;"	kind:variable	line:22
+DBNAME	../selfspy/selfspy/config.py	/^DBNAME = 'selfspy.sqlite'$/;"	kind:variable	line:21
+DIGEST_NAME	../selfspy/selfspy/check_password.py	/^DIGEST_NAME = 'password.digest'$/;"	kind:variable	line:20
+Display	../selfspy/selfspy/activity_store.py	/^class Display:$/;"	kind:class	line:42
+ENCRYPTER	../selfspy/selfspy/models.py	/^ENCRYPTER = None$/;"	kind:variable	line:37
+FORCE_SCREEN_CHANGE	../selfspy/selfspy/sniff_cocoa.py	/^FORCE_SCREEN_CHANGE = 10$/;"	kind:variable	line:43
+Geometry	../selfspy/selfspy/models.py	/^class Geometry(SpookMixin, Base):$/;"	kind:class	line:76
+KeyPress	../selfspy/selfspy/activity_store.py	/^class KeyPress:$/;"	kind:class	line:49
+KeyboardEvent	../selfspy/selfspy/sniff_win.py	/^    def KeyboardEvent(self, event):$/;"	kind:member	line:80
+Keys	../selfspy/selfspy/models.py	/^class Keys(SpookMixin, Base):$/;"	kind:class	line:150
+LOCK	../data/config.py	/^LOCK = None$/;"	kind:variable	line:24
+LOCK	../selfspy/selfspy/config.py	/^LOCK = None$/;"	kind:variable	line:23
+LOCK_FILE	../data/config.py	/^LOCK_FILE = 'selfspy.pid'$/;"	kind:variable	line:23
+LOCK_FILE	../selfspy/selfspy/config.py	/^LOCK_FILE = 'selfspy.pid'$/;"	kind:variable	line:22
+MAGIC_STRING	../selfspy/selfspy/check_password.py	/^MAGIC_STRING = '\\xc5\\x7fdh\\x05\\xf6\\xc5=\\xcfh\\xafv\\xc0\\xf4\\x13i*.O\\xf6\\xc2\\x8d\\x0f\\/;"	kind:variable	line:21
+MouseButtons	../selfspy/selfspy/sniff_win.py	/^    def MouseButtons(self, event):$/;"	kind:member	line:54
+MouseMove	../selfspy/selfspy/sniff_win.py	/^    def MouseMove(self, event):$/;"	kind:member	line:69
+NOW	../selfspy/selfspy/activity_store.py	/^NOW = datetime.now$/;"	kind:variable	line:20
+PERIOD_LOOKUP	../selfspy-vis/selfvis.py	/^PERIOD_LOOKUP = {'s': 'seconds', 'm': 'minutes', 'h': 'hours', 'd': 'days', 'w': 'weeks'}$/;"	kind:variable	line:61
+PERIOD_LOOKUP	../selfspy/selfspy/stats.py	/^PERIOD_LOOKUP = {'s': 'seconds', 'm': 'minutes', 'h': 'hours', 'd': 'days', 'w': 'weeks'}$/;"	kind:variable	line:46
+PROCESS_ACTIONS	../selfspy-vis/selfvis.py	/^PROCESS_ACTIONS = {'pkeys', 'pactive'}$/;"	kind:variable	line:65
+PROCESS_ACTIONS	../selfspy/selfspy/stats.py	/^PROCESS_ACTIONS = {'pkeys', 'pactive'}$/;"	kind:variable	line:50
+PasswordDialog	../selfspy/selfspy/password_dialog.py	/^class PasswordDialog(Dialog):$/;"	kind:class	line:132
+Period	../selfspy/selfspy/period.py	/^class Period:$/;"	kind:class	line:21
+Process	../selfspy/selfspy/models.py	/^class Process(SpookMixin, Base):$/;"	kind:class	line:52
+SCROLL_BUTTONS	../selfspy/selfspy/activity_store.py	/^SCROLL_BUTTONS = {4, 5, 6, 7}$/;"	kind:variable	line:38
+SCROLL_COOLOFF	../selfspy/selfspy/activity_store.py	/^SCROLL_COOLOFF = 10  # seconds$/;"	kind:variable	line:39
+SKIP_MODIFIERS	../selfspy/selfspy/activity_store.py	/^SKIP_MODIFIERS = {"", "Shift_L", "Control_L", "Super_L", "Alt_L", "Super_R", "Control_R", "Shift/;"	kind:variable	line:36
+SUMMARY_ACTIONS	../selfspy-vis/selfvis.py	/^SUMMARY_ACTIONS = ACTIVITY_ACTIONS.union({'pkeys', 'tkeys', 'key_freqs', 'clicks', 'ratios'})$/;"	kind:variable	line:63
+SUMMARY_ACTIONS	../selfspy/selfspy/stats.py	/^SUMMARY_ACTIONS = ACTIVITY_ACTIONS.union({'pkeys', 'tkeys', 'key_freqs', 'clicks', 'ratios'})$/;"	kind:variable	line:48
+Selfstats	../selfspy-vis/selfvis.py	/^class Selfstats(object):$/;"	kind:class	line:211
+Selfstats	../selfspy/selfspy/stats.py	/^class Selfstats:$/;"	kind:class	line:195
+Sniffer	../selfspy/selfspy/sniff_cocoa.py	/^class Sniffer:$/;"	kind:class	line:46
+Sniffer	../selfspy/selfspy/sniff_win.py	/^class Sniffer:$/;"	kind:class	line:100
+Sniffer	../selfspy/selfspy/sniff_x.py	/^class Sniffer:$/;"	kind:class	line:39
+SnifferThread	../selfspy/selfspy/sniff_win.py	/^class SnifferThread(threading.Thread):$/;"	kind:class	line:26
+SpookMixin	../selfspy/selfspy/models.py	/^class SpookMixin(object):$/;"	kind:class	line:42
+WAIT_ANIMATION	../selfspy/selfspy/sniff_cocoa.py	/^WAIT_ANIMATION = 1$/;"	kind:variable	line:44
+WINDOW_ACTIONS	../selfspy-vis/selfvis.py	/^WINDOW_ACTIONS = {'tkeys', 'tactive'}$/;"	kind:variable	line:66
+WINDOW_ACTIONS	../selfspy/selfspy/stats.py	/^WINDOW_ACTIONS = {'tkeys', 'tactive'}$/;"	kind:variable	line:51
+Window	../selfspy/selfspy/models.py	/^class Window(SpookMixin, Base):$/;"	kind:class	line:62
+__init__	../selfspy-vis/selfvis.py	/^    def __init__(self, db_name, args):$/;"	kind:member	line:212
+__init__	../selfspy/selfspy/activity_store.py	/^    def __init__(self):$/;"	kind:member	line:43
+__init__	../selfspy/selfspy/activity_store.py	/^    def __init__(self, db_name, encrypter=None, store_text=True, repeat_char=True):$/;"	kind:member	line:57
+__init__	../selfspy/selfspy/activity_store.py	/^    def __init__(self, key, time, is_repeat):$/;"	kind:member	line:50
+__init__	../selfspy/selfspy/models.py	/^    def __init__(self, button, press, x, y, nrmoves, process_id, window_id, geometry_id):$/;"	kind:member	line:110
+__init__	../selfspy/selfspy/models.py	/^    def __init__(self, name):$/;"	kind:member	line:55
+__init__	../selfspy/selfspy/models.py	/^    def __init__(self, text, keys, timings, nrkeys, started, process_id, window_id, geometry_id)/;"	kind:member	line:168
+__init__	../selfspy/selfspy/models.py	/^    def __init__(self, title, process_id):$/;"	kind:member	line:68
+__init__	../selfspy/selfspy/models.py	/^    def __init__(self, x, y, width, height):$/;"	kind:member	line:84
+__init__	../selfspy/selfspy/password_dialog.py	/^    def __init__(self, title, prompt, parent):$/;"	kind:member	line:134
+__init__	../selfspy/selfspy/period.py	/^    def __init__(self, cutoff, maxtime):$/;"	kind:member	line:22
+__init__	../selfspy/selfspy/sniff_cocoa.py	/^    def __init__(self):$/;"	kind:member	line:47
+__init__	../selfspy/selfspy/sniff_win.py	/^    def __init__(self):$/;"	kind:member	line:102
+__init__	../selfspy/selfspy/sniff_win.py	/^    def __init__(self, hook):$/;"	kind:member	line:27
+__init__	../selfspy/selfspy/sniff_x.py	/^    def __init__(self):$/;"	kind:member	line:40
+__init__	../selfspy/selfspy/stats.py	/^    def __init__(self, db_name, args):$/;"	kind:member	line:196
+__init__.py	../selfspy/selfspy/__init__.py	1;"	kind:file	line:1
+__repr__	../selfspy/selfspy/models.py	/^    def __repr__(self):$/;"	kind:member	line:121
+__repr__	../selfspy/selfspy/models.py	/^    def __repr__(self):$/;"	kind:member	line:222
+__repr__	../selfspy/selfspy/models.py	/^    def __repr__(self):$/;"	kind:member	line:58
+__repr__	../selfspy/selfspy/models.py	/^    def __repr__(self):$/;"	kind:member	line:72
+__repr__	../selfspy/selfspy/models.py	/^    def __repr__(self):$/;"	kind:member	line:90
+__tablename__	../selfspy/selfspy/models.py	/^    def __tablename__(cls):$/;"	kind:member	line:45
+activity_store.py	../selfspy/selfspy/activity_store.py	1;"	kind:file	line:1
+add	../selfspy/selfspy/activity_store.py	/^            add = lambda count, press: count + (0 if press.is_repeat else 1)$/;"	kind:function	line:188
+append	../selfspy/selfspy/period.py	/^    def append(self, time):$/;"	kind:member	line:27
+applicationDidFinishLaunching_	../selfspy/selfspy/sniff_cocoa.py	/^            def applicationDidFinishLaunching_(self, notification):$/;"	kind:member	line:59
+applicationShouldTerminate_	../selfspy/selfspy/sniff_cocoa.py	/^            def applicationShouldTerminate_(self, notification):$/;"	kind:member	line:75
+applicationWillResignActive	../selfspy/selfspy/sniff_cocoa.py	/^            def applicationWillResignActive(self, notification):$/;"	kind:member	line:71
+applicationWillTerminate_	../selfspy/selfspy/sniff_cocoa.py	/^            def applicationWillTerminate_(self, notification):$/;"	kind:member	line:79
+apply	../selfspy/selfspy/password_dialog.py	/^    def apply(self):$/;"	kind:member	line:158
+body	../selfspy/selfspy/password_dialog.py	/^    def body(self, master):$/;"	kind:member	line:138
+button	../selfspy/selfspy/models.py	/^    button = Column(Integer, nullable=False)$/;"	kind:variable	line:95
+button_event	../selfspy/selfspy/sniff_x.py	/^    def button_event(self, event):$/;"	kind:member	line:157
+calc_summary	../selfspy-vis/selfvis.py	/^    def calc_summary(self):$/;"	kind:member	line:494
+calc_summary	../selfspy/selfspy/stats.py	/^    def calc_summary(self):$/;"	kind:member	line:345
+calc_total	../selfspy/selfspy/period.py	/^    def calc_total(self):$/;"	kind:member	line:60
+cancel	../selfspy/selfspy/sniff_cocoa.py	/^    def cancel(self):$/;"	kind:member	line:103
+cancel	../selfspy/selfspy/sniff_win.py	/^    def cancel(self):$/;"	kind:member	line:132
+cancel	../selfspy/selfspy/sniff_x.py	/^    def cancel(self):$/;"	kind:member	line:90
+cfg	../selfspy-vis/selfvis.py	/^import selfspy.config as cfg$/;"	kind:namespace	line:45
+cfg	../selfspy/selfspy/__init__.py	/^from selfspy import config as cfg$/;"	kind:unknown	line:35
+cfg	../selfspy/selfspy/sniff_cocoa.py	/^import config as cfg$/;"	kind:namespace	line:39
+cfg	../selfspy/selfspy/stats.py	/^import config as cfg$/;"	kind:namespace	line:34
+change_password	../selfspy/selfspy/activity_store.py	/^    def change_password(self, new_encrypter):$/;"	kind:member	line:267
+check	../selfspy/selfspy/check_password.py	/^def check(data_dir, decrypter, read_only=False):$/;"	kind:function	line:24
+check_in	../selfspy/selfspy/period.py	/^        def check_in(i):$/;"	kind:function	line:31
+check_needs	../selfspy-vis/selfvis.py	/^    def check_needs(self):$/;"	kind:member	line:226
+check_needs	../selfspy/selfspy/stats.py	/^    def check_needs(self):$/;"	kind:member	line:210
+check_password.py	../selfspy/selfspy/check_password.py	1;"	kind:file	line:1
+check_with_encrypter	../selfspy-vis/selfvis.py	/^    def check_with_encrypter(password):$/;"	kind:function	line:747
+check_with_encrypter	../selfspy/selfspy/__init__.py	/^    def check_with_encrypter(password):$/;"	kind:function	line:88
+check_with_encrypter	../selfspy/selfspy/stats.py	/^    def check_with_encrypter(password):$/;"	kind:function	line:567
+click_pie	../selfspy-vis/selfvis.py	/^    def click_pie(self, stats, unit='clicks'):$/;"	kind:member	line:361
+close	../selfspy/selfspy/activity_store.py	/^    def close(self):$/;"	kind:member	line:262
+config.py	../data/config.py	1;"	kind:file	line:1
+config.py	../selfspy/selfspy/config.py	1;"	kind:file	line:1
+createAppDelegate	../selfspy/selfspy/sniff_cocoa.py	/^    def createAppDelegate(self):$/;"	kind:member	line:54
+create_times	../selfspy-vis/selfvis.py	/^def create_times(row):$/;"	kind:function	line:201
+create_times	../selfspy/selfspy/stats.py	/^def create_times(row):$/;"	kind:function	line:185
+created_at	../selfspy/selfspy/models.py	/^    created_at = Column(DateTime, default=datetime.datetime.now, index=True)$/;"	kind:variable	line:49
+decrypt_humanreadable	../selfspy/selfspy/models.py	/^    def decrypt_humanreadable(self):$/;"	kind:member	line:194
+decrypt_keys	../selfspy/selfspy/models.py	/^    def decrypt_keys(self):$/;"	kind:member	line:197
+decrypt_text	../selfspy/selfspy/models.py	/^    def decrypt_text(self):$/;"	kind:member	line:191
+do	../selfspy-vis/selfvis.py	/^    def do(self):$/;"	kind:member	line:219
+do	../selfspy/selfspy/stats.py	/^    def do(self):$/;"	kind:member	line:203
+encrypt_keys	../selfspy/selfspy/models.py	/^    def encrypt_keys(self, keys, other_encrypter=None):$/;"	kind:member	line:186
+encrypt_text	../selfspy/selfspy/models.py	/^    def encrypt_text(self, text, other_encrypter=None):$/;"	kind:member	line:182
+extend	../selfspy/selfspy/period.py	/^    def extend(self, times):$/;"	kind:member	line:56
+filter_clicks	../selfspy-vis/selfvis.py	/^    def filter_clicks(self):$/;"	kind:member	line:329
+filter_clicks	../selfspy/selfspy/stats.py	/^    def filter_clicks(self):$/;"	kind:member	line:313
+filter_keys	../selfspy-vis/selfvis.py	/^    def filter_keys(self):$/;"	kind:member	line:304
+filter_keys	../selfspy/selfspy/stats.py	/^    def filter_keys(self):$/;"	kind:member	line:288
+filter_many	../selfspy/selfspy/activity_store.py	/^    def filter_many(self):$/;"	kind:member	line:154
+filter_prop	../selfspy-vis/selfvis.py	/^    def filter_prop(self, prop, startprop):$/;"	kind:member	line:275
+filter_prop	../selfspy/selfspy/stats.py	/^    def filter_prop(self, prop, startprop):$/;"	kind:member	line:259
+geometry	../selfspy/selfspy/models.py	/^    geometry = relationship("Geometry", backref=backref('clicks'))$/;"	kind:variable	line:108
+geometry	../selfspy/selfspy/models.py	/^    geometry = relationship("Geometry", backref=backref('keys'))$/;"	kind:variable	line:161
+geometry_id	../selfspy/selfspy/models.py	/^    geometry_id = Column(Integer, ForeignKey('geometry.id'), nullable=False)$/;"	kind:variable	line:107
+geometry_id	../selfspy/selfspy/models.py	/^    geometry_id = Column(Integer, ForeignKey('geometry.id'), nullable=False)$/;"	kind:variable	line:160
+get_cur_window	../selfspy/selfspy/sniff_x.py	/^    def get_cur_window(self):$/;"	kind:member	line:188
+get_geometry	../selfspy/selfspy/sniff_x.py	/^    def get_geometry(self, cur_window):$/;"	kind:member	line:217
+get_key_name	../selfspy/selfspy/sniff_x.py	/^    def get_key_name(self, keycode, state):$/;"	kind:member	line:133
+get_keyring_password	../selfspy/selfspy/password_dialog.py	/^def get_keyring_password(verify, message=None):$/;"	kind:function	line:46
+get_password	../selfspy/selfspy/password_dialog.py	/^def get_password(verify=None, message=None):$/;"	kind:function	line:25
+get_tk_password	../selfspy/selfspy/password_dialog.py	/^def get_tk_password(verify, message=None, force_save=False):$/;"	kind:function	line:107
+get_tty_password	../selfspy/selfspy/password_dialog.py	/^def get_tty_password(verify, message=None, force_save=False):$/;"	kind:function	line:77
+get_user_password	../selfspy/selfspy/password_dialog.py	/^def get_user_password(verify, message=None, force_save=False):$/;"	kind:function	line:37
+get_wm_name	../selfspy/selfspy/sniff_x.py	/^    def get_wm_name(self, win):$/;"	kind:member	line:165
+got_key	../selfspy/selfspy/activity_store.py	/^    def got_key(self, keycode, state, string, is_repeat):$/;"	kind:member	line:212
+got_mouse_click	../selfspy/selfspy/activity_store.py	/^    def got_mouse_click(self, button, x, y):$/;"	kind:member	line:245
+got_mouse_move	../selfspy/selfspy/activity_store.py	/^    def got_mouse_move(self, x, y):$/;"	kind:member	line:257
+got_screen_change	../selfspy/selfspy/activity_store.py	/^    def got_screen_change(self, process_name, window_name, win_x, win_y, win_width, win_height):$/;"	kind:member	line:101
+handler	../selfspy/selfspy/sniff_cocoa.py	/^        def handler(signal, frame):$/;"	kind:function	line:98
+handler	../selfspy/selfspy/sniff_cocoa.py	/^    def handler(self, event):$/;"	kind:member	line:106
+height	../selfspy/selfspy/models.py	/^    height = Column(Integer, nullable=False)$/;"	kind:variable	line:80
+id	../selfspy/selfspy/models.py	/^    id = Column(Integer, primary_key=True)$/;"	kind:variable	line:48
+initialize	../selfspy/selfspy/models.py	/^def initialize(fname):$/;"	kind:function	line:32
+key_event	../selfspy/selfspy/sniff_x.py	/^    def key_event(self, event):$/;"	kind:member	line:141
+keycodes	../selfspy/selfspy/sniff_cocoa.py	/^keycodes = {$/;"	kind:variable	line:202
+keys	../selfspy/selfspy/models.py	/^    keys = Column(Binary)$/;"	kind:variable	line:165
+load_timings	../selfspy/selfspy/models.py	/^    def load_timings(self):$/;"	kind:member	line:219
+lookup_keysym	../selfspy/selfspy/sniff_x.py	/^    def lookup_keysym(self, keysym):$/;"	kind:member	line:160
+main	../selfspy-vis/selfvis.py	/^def main():$/;"	kind:function	line:738
+main	../selfspy/selfspy/__init__.py	/^def main():$/;"	kind:function	line:79
+main	../selfspy/selfspy/stats.py	/^def main():$/;"	kind:function	line:558
+make_encrypter	../selfspy-vis/selfvis.py	/^def make_encrypter(password):$/;"	kind:function	line:730
+make_encrypter	../selfspy/selfspy/__init__.py	/^def make_encrypter(password):$/;"	kind:function	line:71
+make_encrypter	../selfspy/selfspy/stats.py	/^def make_encrypter(password):$/;"	kind:function	line:550
+make_others	../selfspy-vis/selfvis.py	/^        def make_others(D, n=7):$/;"	kind:function	line:388
+make_period	../selfspy-vis/selfvis.py	/^def make_period(q, period, who, start, prop):$/;"	kind:function	line:167
+make_period	../selfspy/selfspy/stats.py	/^def make_period(q, period, who, start, prop):$/;"	kind:function	line:151
+make_time_string	../selfspy-vis/selfvis.py	/^def make_time_string(dates, clock):$/;"	kind:function	line:104
+make_time_string	../selfspy/selfspy/stats.py	/^def make_time_string(dates, clock):$/;"	kind:function	line:89
+maybe_decrypt	../selfspy/selfspy/models.py	/^def maybe_decrypt(s, other_encrypter=None):$/;"	kind:function	line:142
+maybe_encrypt	../selfspy/selfspy/models.py	/^def maybe_encrypt(s, other_encrypter=None):$/;"	kind:function	line:132
+maybe_merge	../selfspy/selfspy/period.py	/^        def maybe_merge(i):$/;"	kind:function	line:37
+maybe_reg_filter	../selfspy-vis/selfvis.py	/^    def maybe_reg_filter(self, q, name, names, table, source_prop, target_prop):$/;"	kind:member	line:255
+maybe_reg_filter	../selfspy/selfspy/stats.py	/^    def maybe_reg_filter(self, q, name, names, table, source_prop, target_prop):$/;"	kind:member	line:239
+models.py	../selfspy/selfspy/models.py	1;"	kind:file	line:1
+mpldates	../selfspy-vis/selfvis.py	/^        from matplotlib import dates as mpldates$/;"	kind:unknown	line:426
+name	../selfspy/selfspy/models.py	/^    name = Column(Unicode, index=True, unique=True)$/;"	kind:variable	line:53
+np	../selfspy-vis/selfvis.py	/^import numpy as np$/;"	kind:namespace	line:56
+nrkeys	../selfspy/selfspy/models.py	/^    nrkeys = Column(Integer, index=True)$/;"	kind:variable	line:163
+nrmoves	../selfspy/selfspy/models.py	/^    nrmoves = Column(Integer, nullable=False)$/;"	kind:variable	line:99
+pad	../selfspy/selfspy/models.py	/^def pad(s, padnum):$/;"	kind:function	line:125
+parse_config	../selfspy-vis/selfvis.py	/^def parse_config():$/;"	kind:function	line:670
+parse_config	../selfspy/selfspy/__init__.py	/^def parse_config():$/;"	kind:function	line:38
+parse_config	../selfspy/selfspy/stats.py	/^def parse_config():$/;"	kind:function	line:492
+password_dialog.py	../selfspy/selfspy/password_dialog.py	1;"	kind:file	line:1
+pd	../selfspy-vis/selfvis.py	/^        import pandas as pd$/;"	kind:namespace	line:362
+period.py	../selfspy/selfspy/period.py	1;"	kind:file	line:1
+plt	../selfspy-vis/selfvis.py	/^        import matplotlib.pyplot as plt$/;"	kind:namespace	line:363
+press	../selfspy/selfspy/models.py	/^    press = Column(Boolean, nullable=False)$/;"	kind:variable	line:96
+pretty_seconds	../selfspy-vis/selfvis.py	/^def pretty_seconds(secs):$/;"	kind:function	line:75
+pretty_seconds	../selfspy/selfspy/stats.py	/^def pretty_seconds(secs):$/;"	kind:function	line:60
+process	../selfspy/selfspy/models.py	/^    process = relationship("Process", backref=backref('clicks'))$/;"	kind:variable	line:102
+process	../selfspy/selfspy/models.py	/^    process = relationship("Process", backref=backref('keys'))$/;"	kind:variable	line:155
+process	../selfspy/selfspy/models.py	/^    process = relationship("Process", backref=backref('windows'))$/;"	kind:variable	line:66
+process_id	../selfspy/selfspy/models.py	/^    process_id = Column(Integer, ForeignKey('process.id'), nullable=False, index=True)$/;"	kind:variable	line:101
+process_id	../selfspy/selfspy/models.py	/^    process_id = Column(Integer, ForeignKey('process.id'), nullable=False, index=True)$/;"	kind:variable	line:154
+process_id	../selfspy/selfspy/models.py	/^    process_id = Column(Integer, ForeignKey('process.id'), nullable=False, index=True)$/;"	kind:variable	line:65
+processevents	../selfspy/selfspy/sniff_x.py	/^    def processevents(self, reply):$/;"	kind:member	line:94
+req_file	../selfspy/setup.py	/^    req_file = "win-requirements.txt"$/;"	kind:variable	line:8
+req_file	../selfspy/setup.py	/^    req_file = 'osx-requirements.txt'$/;"	kind:variable	line:6
+requires	../selfspy/setup.py	/^    requires = list(f.readlines())$/;"	kind:variable	line:14
+run	../selfspy/selfspy/activity_store.py	/^    def run(self):$/;"	kind:member	line:90
+run	../selfspy/selfspy/sniff_cocoa.py	/^    def run(self):$/;"	kind:member	line:91
+run	../selfspy/selfspy/sniff_win.py	/^    def run(self):$/;"	kind:member	line:117
+run	../selfspy/selfspy/sniff_win.py	/^    def run(self):$/;"	kind:member	line:45
+run	../selfspy/selfspy/sniff_x.py	/^    def run(self):$/;"	kind:member	line:60
+selfvis.py	../selfspy-vis/selfvis.py	1;"	kind:file	line:1
+set_keyring_password	../selfspy/selfspy/password_dialog.py	/^def set_keyring_password(password):$/;"	kind:function	line:64
+setup.py	../selfspy/setup.py	1;"	kind:file	line:1
+show_rows	../selfspy-vis/selfvis.py	/^    def show_rows(self):$/;"	kind:member	line:338
+show_rows	../selfspy/selfspy/stats.py	/^    def show_rows(self):$/;"	kind:member	line:322
+show_summary	../selfspy-vis/selfvis.py	/^    def show_summary(self):$/;"	kind:member	line:579
+show_summary	../selfspy/selfspy/stats.py	/^    def show_summary(self):$/;"	kind:member	line:401
+simplify_windows	../selfspy-vis/selfvis.py	/^    def simplify_windows(self, klass, win):$/;"	kind:member	line:552
+sniff_cocoa.py	../selfspy/selfspy/sniff_cocoa.py	1;"	kind:file	line:1
+sniff_win.py	../selfspy/selfspy/sniff_win.py	1;"	kind:file	line:1
+sniff_x.py	../selfspy/selfspy/sniff_x.py	1;"	kind:file	line:1
+sniffer	../selfspy/selfspy/activity_store.py	/^    from selfspy import sniff_cocoa as sniffer$/;"	kind:unknown	line:26
+sniffer	../selfspy/selfspy/activity_store.py	/^    from selfspy import sniff_win as sniffer$/;"	kind:unknown	line:28
+sniffer	../selfspy/selfspy/activity_store.py	/^    from selfspy import sniff_x as sniffer$/;"	kind:unknown	line:30
+sns	../selfspy-vis/selfvis.py	/^import seaborn as sns$/;"	kind:namespace	line:35
+started	../selfspy/selfspy/models.py	/^    started = Column(DateTime, nullable=False)$/;"	kind:variable	line:152
+state_to_idx	../selfspy/selfspy/sniff_x.py	/^def state_to_idx(state):  # this could be a dict, but I might want to extend it.$/;"	kind:function	line:29
+stats.py	../selfspy/selfspy/stats.py	1;"	kind:file	line:1
+store_click	../selfspy/selfspy/activity_store.py	/^    def store_click(self, button, x, y):$/;"	kind:member	line:233
+store_keys	../selfspy/selfspy/activity_store.py	/^    def store_keys(self):$/;"	kind:member	line:180
+text	../selfspy/selfspy/models.py	/^    text = Column(Binary, nullable=False)$/;"	kind:variable	line:151
+timings	../selfspy/selfspy/models.py	/^    timings = Column(Binary)$/;"	kind:variable	line:166
+title	../selfspy/selfspy/models.py	/^    title = Column(Unicode, index=True)$/;"	kind:variable	line:63
+to_humanreadable	../selfspy/selfspy/models.py	/^    def to_humanreadable(self, text):$/;"	kind:member	line:201
+todo	../selfspy/selfspy/sniff_cocoa.py	/^                    todo = lambda: self.mouse_button_hook(4, loc.x, loc.y)$/;"	kind:function	line:126
+todo	../selfspy/selfspy/sniff_cocoa.py	/^                    todo = lambda: self.mouse_button_hook(5, loc.x, loc.y)$/;"	kind:function	line:128
+todo	../selfspy/selfspy/sniff_cocoa.py	/^                    todo = lambda: self.mouse_button_hook(6, loc.x, loc.y)$/;"	kind:function	line:130
+todo	../selfspy/selfspy/sniff_cocoa.py	/^                    todo = lambda: self.mouse_button_hook(7, loc.x, loc.y)$/;"	kind:function	line:132
+todo	../selfspy/selfspy/sniff_cocoa.py	/^                todo = lambda: self.key_hook(event.keyCode(),$/;"	kind:function	line:151
+todo	../selfspy/selfspy/sniff_cocoa.py	/^                todo = lambda: self.mouse_button_hook(1, loc.x, loc.y)$/;"	kind:function	line:120
+todo	../selfspy/selfspy/sniff_cocoa.py	/^                todo = lambda: self.mouse_button_hook(3, loc.x, loc.y)$/;"	kind:function	line:123
+todo	../selfspy/selfspy/sniff_cocoa.py	/^                todo = lambda: self.mouse_move_hook(loc.x, loc.y)$/;"	kind:function	line:157
+todo	../selfspy/selfspy/sniff_cocoa.py	/^            todo = lambda: None$/;"	kind:function	line:110
+trycommit	../selfspy/selfspy/activity_store.py	/^    def trycommit(self):$/;"	kind:member	line:79
+tryget	../selfspy-vis/selfvis.py	/^            def tryget(prop):$/;"	kind:function	line:656
+tryget	../selfspy/selfspy/stats.py	/^            def tryget(prop):$/;"	kind:function	line:478
+updict	../selfspy-vis/selfvis.py	/^        def updict(d1, d2, activity_times, sub=None):$/;"	kind:function	line:495
+updict	../selfspy/selfspy/stats.py	/^        def updict(d1, d2, activity_times, sub=None):$/;"	kind:function	line:346
+width	../selfspy/selfspy/models.py	/^    width = Column(Integer, nullable=False)$/;"	kind:variable	line:79
+window	../selfspy/selfspy/models.py	/^    window = relationship("Window", backref=backref('clicks'))$/;"	kind:variable	line:105
+window	../selfspy/selfspy/models.py	/^    window = relationship("Window", backref=backref('keys'))$/;"	kind:variable	line:158
+window_id	../selfspy/selfspy/models.py	/^    window_id = Column(Integer, ForeignKey('window.id'), nullable=False)$/;"	kind:variable	line:104
+window_id	../selfspy/selfspy/models.py	/^    window_id = Column(Integer, ForeignKey('window.id'), nullable=False)$/;"	kind:variable	line:157
+x	../selfspy/selfspy/models.py	/^    x = Column(Integer, nullable=False)$/;"	kind:variable	line:97
+xpos	../selfspy/selfspy/models.py	/^    xpos = Column(Integer, nullable=False)$/;"	kind:variable	line:77
+y	../selfspy/selfspy/models.py	/^    y = Column(Integer, nullable=False)$/;"	kind:variable	line:98
+ypos	../selfspy/selfspy/models.py	/^    ypos = Column(Integer, nullable=False)$/;"	kind:variable	line:78
