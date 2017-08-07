@@ -195,6 +195,9 @@ def create_times(row):
 
 class Selfstats:
     def __init__(self, db_name, args):
+        print "********************************************************"
+        print "In init", db_name, args
+        print "********************************************************"
         self.args = args
         self.session_maker = models.initialize(db_name)
         self.inmouse = False
