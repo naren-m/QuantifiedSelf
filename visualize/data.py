@@ -1,49 +1,54 @@
-#!/usr/bin/env python
-
-import sqlite3
+import selfspy_stats as ss
 import pandas as pd
 
 
-data_file = "../data/selfspy.sqlite"
-conn = sqlite3.connect(data_file)
+class SelfSpy:
+    def __init__(self, parameterFile):
+        self.args = self._get_params(parameterFile)
+        self.dbName = self.args['db_name']
+        self.stats = ss.Selfstats(self.dbName, self.args)
 
-cur = conn.cursor()
-query = "SELECT name FROM sqlite_master WHERE type='table';"
-cur.execute(query)
+    def _get_params(self, file_name):
+        """
+        Internal function to parse the parameter.json file and return dict
+        """
+        import ast
 
-print cur.fetchall()
+        with open(file_name) as data_file:
+            data = data_file.read()
+        return ast.literal_eval(data)
 
+    def _converKeysToDF(self, input):
+        rows = 0
+        l = list()
+        for row in input:
+            rows += 1
+            val = (row.id, row.started,
+                   ss.pretty_seconds(
+                       (row.created_at - row.started).total_seconds()),
+                   row.process.name, '"%s"' % row.window.title, row.nrkeys,)
+            l.append(val)
 
-def closeConn():
-    cur.close()
-    conn.close()
+        return pd.DataFrame(l)
 
+    def getKeys(self):
+        """
+        returns generator for keys
+        """
+        return self.stats.filter_keys()
 
-query = "SELECT * from process limit 5;"
-cur.execute(query)
-print cur.fetchall()
+    def getKeysDF(self):
+        """
+        returns data frame for filter_keys
+        """
+        colNames = ["RowId",  "StartTime",  "Duration",
+                    "Process", "WindowTitle", "keysPressed"]
+        df = self._converKeysToDF(self.getKeys())
+        df.columns = colNames
+        return df
 
-df = pd.read_sql_query(query, conn)
-
-df.head()
-
-
-def get_keys():
-    query = "SELECT * from keys;"
-    keys_df = pd.read_sql_query(query, conn)
-    return keys_df
-
-
-def get_process():
-    query = "SELECT * from process;"
-    process_df = pd.read_sql_query(query, conn)
-    return process_df
-
-
-keys_df = get_keys()
-# print keys_df.head()
-
-process_df = get_process()
-print get_process()
-
-closeConn()
+    def getClicks(self):
+        """
+        returns generator for keys
+        """
+        return self.stats.filter_clicks()
