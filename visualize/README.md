@@ -18,3 +18,5 @@ pip install plotly==2.0.12  # Plotly graphing library used in examples
 
 - [Installation instructions](https://plot.ly/dash/installation)
 - [getting started tutorial](https://plot.ly/dash/getting-started)
+- [Pandas sqlite graphing references](https://plot.ly/python/big-data-analytics-with-pandas-and-sqlite)
+- [Plotly offline graping](https://plot.ly/python/offline/)
