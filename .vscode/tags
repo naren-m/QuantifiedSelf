@@ -38,7 +38,7 @@ create_times	../visualize/selfspy_stats.py	/^def create_times(row):$/;"	kind:fun
 cur	../visualize/data.py	/^cur = conn.cursor()$/;"	kind:variable	line:10
 dash_html.py	../visualize/dash_examples/dash_html.py	1;"	kind:file	line:1
 data.py	../visualize/data.py	1;"	kind:file	line:1
-data_file	../visualize/data.py	/^data_file =  "..\/data\/selfspy.sqlite"$/;"	kind:variable	line:7
+data_file	../visualize/data.py	/^data_file = "..\/data\/selfspy.sqlite"$/;"	kind:variable	line:7
 dcc	../visualize/dash_examples/dash_html.py	/^import dash_core_components as dcc$/;"	kind:namespace	line:6
 dcc	../visualize/dash_examples/example.py	/^import dash_core_components as dcc$/;"	kind:namespace	line:3
 dcc	../visualize/dash_examples/graph_example.py	/^import dash_core_components as dcc$/;"	kind:namespace	line:2
@@ -50,15 +50,15 @@ dcc	../visualize/dash_examples/table_example.py	/^import dash_core_components as
 df	../visualize/dash_examples/graph_example.py	/^df = pd.read_csv($/;"	kind:variable	line:9
 df	../visualize/dash_examples/multiple_inputs_example.py	/^df = pd.read_csv($/;"	kind:variable	line:9
 df	../visualize/dash_examples/table_example.py	/^df = pd.read_csv($/;"	kind:variable	line:7
-df	../visualize/data.py	/^df = pd.read_sql_query(query, conn)$/;"	kind:variable	line:25
+df	../visualize/data.py	/^df = pd.read_sql_query(query, conn)$/;"	kind:variable	line:26
 do	../visualize/selfspy_stats.py	/^    def do(self):$/;"	kind:member	line:207
 example.py	../visualize/dash_examples/example.py	1;"	kind:file	line:1
 filter_clicks	../visualize/selfspy_stats.py	/^    def filter_clicks(self):$/;"	kind:member	line:317
 filter_keys	../visualize/selfspy_stats.py	/^    def filter_keys(self):$/;"	kind:member	line:292
 filter_prop	../visualize/selfspy_stats.py	/^    def filter_prop(self, prop, startprop):$/;"	kind:member	line:263
 generate_table	../visualize/dash_examples/table_example.py	/^def generate_table(dataframe, max_rows=10):$/;"	kind:function	line:13
-get_keys	../visualize/data.py	/^def get_keys():$/;"	kind:function	line:30
-get_process	../visualize/data.py	/^def get_process():$/;"	kind:function	line:35
+get_keys	../visualize/data.py	/^def get_keys():$/;"	kind:function	line:31
+get_process	../visualize/data.py	/^def get_process():$/;"	kind:function	line:37
 go	../visualize/dash_examples/graph_example.py	/^import plotly.graph_objs as go$/;"	kind:namespace	line:4
 go	../visualize/dash_examples/multiple_inputs_example.py	/^import plotly.graph_objs as go$/;"	kind:namespace	line:4
 graph_example.py	../visualize/dash_examples/graph_example.py	1;"	kind:file	line:1
@@ -71,7 +71,7 @@ html	../visualize/dash_examples/markdown_example.py	/^import dash_html_component
 html	../visualize/dash_examples/multiple_inputs_example.py	/^import dash_html_components as html$/;"	kind:namespace	line:3
 html	../visualize/dash_examples/table_example.py	/^import dash_html_components as html$/;"	kind:namespace	line:3
 html_components.py	../visualize/dash_examples/html_components.py	1;"	kind:file	line:1
-keys_df	../visualize/data.py	/^keys_df = get_keys()$/;"	kind:variable	line:40
+keys_df	../visualize/data.py	/^keys_df = get_keys()$/;"	kind:variable	line:43
 live_feet_example.py	../visualize/dash_examples/live_feet_example.py	1;"	kind:file	line:1
 main	../visualize/selfspy_stats.py	/^def main():$/;"	kind:function	line:562
 make_encrypter	../visualize/selfspy_stats.py	/^def make_encrypter(password):$/;"	kind:function	line:554
@@ -87,8 +87,8 @@ pd	../visualize/dash_examples/multiple_inputs_example.py	/^import pandas as pd$/
 pd	../visualize/dash_examples/table_example.py	/^import pandas as pd$/;"	kind:namespace	line:5
 pd	../visualize/data.py	/^import pandas as pd$/;"	kind:namespace	line:4
 pretty_seconds	../visualize/selfspy_stats.py	/^def pretty_seconds(secs):$/;"	kind:function	line:61
-process_df	../visualize/data.py	/^process_df = get_process()$/;"	kind:variable	line:43
-query	../visualize/data.py	/^query = "SELECT * from process limit 5;"$/;"	kind:variable	line:21
+process_df	../visualize/data.py	/^process_df = get_process()$/;"	kind:variable	line:46
+query	../visualize/data.py	/^query = "SELECT * from process limit 5;"$/;"	kind:variable	line:22
 query	../visualize/data.py	/^query = "SELECT name FROM sqlite_master WHERE type='table';"$/;"	kind:variable	line:11
 satellite	../visualize/dash_examples/live_feet_example.py	/^satellite = Orbital('TERRA')$/;"	kind:variable	line:10
 selfspy_stats.py	../visualize/selfspy_stats.py	1;"	kind:file	line:1

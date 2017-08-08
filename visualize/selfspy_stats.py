@@ -44,9 +44,11 @@ import codecs
 sys.stdout = codecs.getwriter('utf8')(sys.stdout)
 
 ACTIVE_SECONDS = 180
-PERIOD_LOOKUP = {'s': 'seconds', 'm': 'minutes', 'h': 'hours', 'd': 'days', 'w': 'weeks'}
+PERIOD_LOOKUP = {'s': 'seconds', 'm': 'minutes',
+                 'h': 'hours', 'd': 'days', 'w': 'weeks'}
 ACTIVITY_ACTIONS = {'active', 'periods', 'pactive', 'tactive', 'ratios'}
-SUMMARY_ACTIONS = ACTIVITY_ACTIONS.union({'pkeys', 'tkeys', 'key_freqs', 'clicks', 'ratios'})
+SUMMARY_ACTIONS = ACTIVITY_ACTIONS.union(
+    {'pkeys', 'tkeys', 'key_freqs', 'clicks', 'ratios'})
 
 PROCESS_ACTIONS = {'pkeys', 'pactive'}
 WINDOW_ACTIONS = {'tkeys', 'tactive'}
@@ -150,7 +152,7 @@ def make_time_string(dates, clock):
 
 
 def make_period(q, period, who, start, prop):
-    if isinstance(period, list) and len(period)>0:
+    if isinstance(period, list) and len(period) > 0:
         if type(period[0]) is str:
             periodstr = "".join(period)
         else:
@@ -160,11 +162,12 @@ def make_period(q, period, who, start, prop):
     else:
         print '%s is of uncompatible type %s.' % (who, str(type(period)))
         sys.exit(1)
-    pmatch = re.match("(\d+)(["+"".join(PERIOD_LOOKUP.keys())+"]?)", periodstr)
-    if pmatch==None:
+    pmatch = re.match(
+        "(\d+)([" + "".join(PERIOD_LOOKUP.keys()) + "]?)", periodstr)
+    if pmatch == None:
         print '%s has an unrecognizable format: %s' % (who, periodstr)
         sys.exit(1)
-    period = [pmatch.group(1)]+([pmatch.group(2)] if pmatch.group(2) else [])
+    period = [pmatch.group(1)] + ([pmatch.group(2)] if pmatch.group(2) else [])
 
     d = {}
     val = int(period[0])
@@ -269,21 +272,27 @@ class Selfstats:
             s, start = make_time_string(self.args['date'], self.args['clock'])
             q = q.filter(prop.created_at >= s)
             if self.args['limit'] is not None:
-                q = make_period(q, self.args['limit'], '--limit', start, startprop)
+                q = make_period(
+                    q, self.args['limit'], '--limit', start, startprop)
         elif self.args['id'] is not None:
             q = q.filter(prop.id >= self.args['id'])
             if self.args['limit'] is not None:
-                q = q.filter(prop.id < self.args['id'] + int(self.args['limit'][0]))
+                q = q.filter(
+                    prop.id < self.args['id'] + int(self.args['limit'][0]))
         elif self.args['back'] is not None:
-            q, start = make_period(q, self.args['back'], '--back', None, startprop)
+            q, start = make_period(
+                q, self.args['back'], '--back', None, startprop)
             if self.args['limit'] is not None:
-                q = make_period(q, self.args['limit'], '--limit', start, startprop)
+                q = make_period(
+                    q, self.args['limit'], '--limit', start, startprop)
 
-        q, found = self.maybe_reg_filter(q, 'process', 'process(es)', models.Process, 'name', prop.process_id)
+        q, found = self.maybe_reg_filter(
+            q, 'process', 'process(es)', models.Process, 'name', prop.process_id)
         if not found:
             return None
 
-        q, found = self.maybe_reg_filter(q, 'title', 'title(s)', models.Window, 'title', prop.window_id)
+        q, found = self.maybe_reg_filter(
+            q, 'title', 'title(s)', models.Window, 'title', prop.window_id)
         if not found:
             return None
 
@@ -471,8 +480,10 @@ class Selfstats:
             if 'activity' in self.summary:
                 print 'Active periods:'
                 for t1, t2 in self.summary['activity'].times:
-                    d1 = datetime.datetime.fromtimestamp(t1).replace(microsecond=0)
-                    d2 = datetime.datetime.fromtimestamp(t2).replace(microsecond=0)
+                    d1 = datetime.datetime.fromtimestamp(
+                        t1).replace(microsecond=0)
+                    d2 = datetime.datetime.fromtimestamp(
+                        t2).replace(microsecond=0)
                     print '%s - %s' % (d1.isoformat(' '), str(d2.time()).split('.')[0])
             else:
                 print 'No active periods.'
@@ -504,49 +515,69 @@ def parse_config():
     defaults = {}
     if args.config:
         if not os.path.exists(args.config):
-            raise  EnvironmentError("Config file %s doesn't exist." % args.config)
+            raise EnvironmentError(
+                "Config file %s doesn't exist." % args.config)
         config = ConfigParser.SafeConfigParser()
         config.read([args.config])
         defaults = dict(config.items('Defaults') + config.items("Selfstats"))
 
-    parser = argparse.ArgumentParser(description="""Calculate statistics on selfspy data. Per default it will show non-text information that matches the filter. Adding '-s' means also show text. Adding any of the summary options will show those summaries over the given filter instead of the listing. Multiple summary options can be given to print several summaries over the same filter. If you give arguments that need to access text / keystrokes, you will be asked for the decryption password.""", epilog="""See the README file or http://gurgeh.github.com/selfspy for examples.""", parents=[conf_parser])
+    parser = argparse.ArgumentParser(description="""Calculate statistics on selfspy data. Per default it will show non-text information that matches the filter. Adding '-s' means also show text. Adding any of the summary options will show those summaries over the given filter instead of the listing. Multiple summary options can be given to print several summaries over the same filter. If you give arguments that need to access text / keystrokes, you will be asked for the decryption password.""",
+                                     epilog="""See the README file or http://gurgeh.github.com/selfspy for examples.""", parents=[conf_parser])
     parser.set_defaults(**defaults)
     parser.add_argument('-p', '--password', help='Decryption password. Only needed if selfstats needs to access text / keystrokes data. If your database in not encrypted, specify -p="" here. If you don\'t specify a password in the command line arguments or in a config file, and the statistics you ask for require a password, a dialog will pop up asking for the password. If you give your password on the command line, remember that it will most likely be stored in plain text in your shell history.')
-    parser.add_argument('-d', '--data-dir', help='Data directory for selfspy, where the database is stored. Remember that Selfspy must have read/write access. Default is %s' % cfg.DATA_DIR, default=cfg.DATA_DIR)
+    parser.add_argument('-d', '--data-dir', help='Data directory for selfspy, where the database is stored. Remember that Selfspy must have read/write access. Default is %s' %
+                        cfg.DATA_DIR, default=cfg.DATA_DIR)
 
-    parser.add_argument('-s', '--showtext', action='store_true', help='Also show the text column. This switch is ignored if at least one of the summary options are used. Requires password.')
+    parser.add_argument('-s', '--showtext', action='store_true',
+                        help='Also show the text column. This switch is ignored if at least one of the summary options are used. Requires password.')
 
     parser.add_argument('-D', '--date', nargs='+', help='Which date to start the listing or summarizing from. If only one argument is given (--date 13) it is interpreted as the closest date in the past on that day. If two arguments are given (--date 03 13) it is interpreted as the closest date in the past on that month and that day, in that order. If three arguments are given (--date 2012 03 13) it is interpreted as YYYY MM DD')
     parser.add_argument('-C', '--clock', type=str, help='Time to start the listing or summarizing from. Given in 24 hour format as --clock 13:25. If no --date is given, interpret the time as today if that results in sometimes in the past, otherwise as yesterday.')
 
-    parser.add_argument('-i', '--id', type=int, help='Which row ID to start the listing or summarizing from. If --date and/or --clock is given, this option is ignored.')
+    parser.add_argument('-i', '--id', type=int,
+                        help='Which row ID to start the listing or summarizing from. If --date and/or --clock is given, this option is ignored.')
 
-    parser.add_argument('-b', '--back', nargs='+', type=str, help='--back <period> [<unit>] Start the listing or summary this much back in time. Use this as an alternative to --date, --clock and --id. If any of those are given, this option is ignored. <unit> is either "s" (seconds), "m" (minutes), "h" (hours), "d" (days) or "w" (weeks). If no unit is given, it is assumed to be hours.')
+    parser.add_argument('-b', '--back', nargs='+', type=str,
+                        help='--back <period> [<unit>] Start the listing or summary this much back in time. Use this as an alternative to --date, --clock and --id. If any of those are given, this option is ignored. <unit> is either "s" (seconds), "m" (minutes), "h" (hours), "d" (days) or "w" (weeks). If no unit is given, it is assumed to be hours.')
 
     parser.add_argument('-l', '--limit', help='--limit <period> [<unit>]. If the start is given in --date/--clock, the limit is a time period given by <unit>. <unit> is either "s" (seconds), "m" (minutes), "h" (hours), "d" (days) or "w" (weeks). If no unit is given, it is assumed to be hours. If the start is given with --id, limit has no unit and means that the maximum row ID is --id + --limit.', nargs='+', type=str)
 
-    parser.add_argument('-m', '--min-keys', type=int, metavar='nr', help='Only allow entries with at least <nr> keystrokes')
+    parser.add_argument('-m', '--min-keys', type=int, metavar='nr',
+                        help='Only allow entries with at least <nr> keystrokes')
 
-    parser.add_argument('-T', '--title', type=str, metavar='regexp', help='Only allow entries where a search for this <regexp> in the window title matches something. All regular expressions are case insensitive.')
-    parser.add_argument('-P', '--process', type=str, metavar='regexp', help='Only allow entries where a search for this <regexp> in the process matches something.')
-    parser.add_argument('-B', '--body', type=str, metavar='regexp', help='Only allow entries where a search for this <regexp> in the body matches something. Do not use this filter when summarizing ratios or activity, as it has no effect on mouse clicks. Requires password.')
+    parser.add_argument('-T', '--title', type=str, metavar='regexp',
+                        help='Only allow entries where a search for this <regexp> in the window title matches something. All regular expressions are case insensitive.')
+    parser.add_argument('-P', '--process', type=str, metavar='regexp',
+                        help='Only allow entries where a search for this <regexp> in the process matches something.')
+    parser.add_argument('-B', '--body', type=str, metavar='regexp',
+                        help='Only allow entries where a search for this <regexp> in the body matches something. Do not use this filter when summarizing ratios or activity, as it has no effect on mouse clicks. Requires password.')
 
-    parser.add_argument('--clicks', action='store_true', help='Summarize number of mouse button clicks for all buttons.')
+    parser.add_argument('--clicks', action='store_true',
+                        help='Summarize number of mouse button clicks for all buttons.')
 
-    parser.add_argument('--key-freqs', action='store_true', help='Summarize a table of absolute and relative number of keystrokes for each used key during the time period. Requires password.')
+    parser.add_argument('--key-freqs', action='store_true',
+                        help='Summarize a table of absolute and relative number of keystrokes for each used key during the time period. Requires password.')
 
-    parser.add_argument('--human-readable', action='store_true', help='This modifies the --body entry and honors backspace.')
-    parser.add_argument('--active', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS, help='Summarize total time spent active during the period. The optional argument gives how many seconds after each mouse click (including scroll up or down) or keystroke that you are considered active. Default is %d.' % ACTIVE_SECONDS)
+    parser.add_argument('--human-readable', action='store_true',
+                        help='This modifies the --body entry and honors backspace.')
+    parser.add_argument('--active', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS,
+                        help='Summarize total time spent active during the period. The optional argument gives how many seconds after each mouse click (including scroll up or down) or keystroke that you are considered active. Default is %d.' % ACTIVE_SECONDS)
 
-    parser.add_argument('--ratios', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS, help='Summarize the ratio between different metrics in the given period. "Clicks" will not include up or down scrolling. The optional argument is the "seconds" cutoff for calculating active use, like --active.')
+    parser.add_argument('--ratios', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS,
+                        help='Summarize the ratio between different metrics in the given period. "Clicks" will not include up or down scrolling. The optional argument is the "seconds" cutoff for calculating active use, like --active.')
 
-    parser.add_argument('--periods', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS, help='List active time periods. Optional argument works same as for --active.')
+    parser.add_argument('--periods', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS,
+                        help='List active time periods. Optional argument works same as for --active.')
 
-    parser.add_argument('--pactive', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS, help='List processes, sorted by time spent active in them. Optional argument works same as for --active.')
-    parser.add_argument('--tactive', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS, help='List window titles, sorted by time spent active in them. Optional argument works same as for --active.')
+    parser.add_argument('--pactive', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS,
+                        help='List processes, sorted by time spent active in them. Optional argument works same as for --active.')
+    parser.add_argument('--tactive', type=int, metavar='seconds', nargs='?', const=ACTIVE_SECONDS,
+                        help='List window titles, sorted by time spent active in them. Optional argument works same as for --active.')
 
-    parser.add_argument('--pkeys', action='store_true', help='List processes sorted by number of keystrokes.')
-    parser.add_argument('--tkeys', action='store_true', help='List window titles sorted by number of keystrokes.')
+    parser.add_argument('--pkeys', action='store_true',
+                        help='List processes sorted by number of keystrokes.')
+    parser.add_argument('--tkeys', action='store_true',
+                        help='List window titles sorted by number of keystrokes.')
 
     return parser.parse_args()
 

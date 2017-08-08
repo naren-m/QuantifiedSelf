@@ -4,7 +4,7 @@ import sqlite3
 import pandas as pd
 
 
-data_file =  "../data/selfspy.sqlite"
+data_file = "../data/selfspy.sqlite"
 conn = sqlite3.connect(data_file)
 
 cur = conn.cursor()
@@ -13,10 +13,11 @@ cur.execute(query)
 
 print cur.fetchall()
 
-# close 
+
 def closeConn():
     cur.close()
     conn.close()
+
 
 query = "SELECT * from process limit 5;"
 cur.execute(query)
@@ -32,10 +33,12 @@ def get_keys():
     keys_df = pd.read_sql_query(query, conn)
     return keys_df
 
+
 def get_process():
     query = "SELECT * from process;"
     process_df = pd.read_sql_query(query, conn)
     return process_df
+
 
 keys_df = get_keys()
 # print keys_df.head()
