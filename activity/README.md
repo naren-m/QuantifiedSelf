@@ -25,3 +25,7 @@ scope = [u'weight', u'heartrate', u'location', u'profile', u'settings', u'activi
 ```
 
 Save the access and refresh tokens.
+
+## Reference
+
+- [James Gardiner fitbit data analysis](http://jgardiner.co.uk/blog/fitbit-data-analysis)
