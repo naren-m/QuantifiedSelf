@@ -2,21 +2,22 @@ import selfspy_stats as ss
 import pandas as pd
 
 
+def get_params(file_name):
+    """
+    Internal function to parse the parameter.json file and return dict
+    """
+    import ast
+
+    with open(file_name) as data_file:
+        data = data_file.read()
+    return ast.literal_eval(data)
+
+
 class SelfSpy:
-    def __init__(self, parameterFile):
-        self.args = self._get_params(parameterFile)
+    def __init__(self, parameters):
+        self.args = parameters
         self.dbName = self.args['db_name']
         self.stats = ss.Selfstats(self.dbName, self.args)
-
-    def _get_params(self, file_name):
-        """
-        Internal function to parse the parameter.json file and return dict
-        """
-        import ast
-
-        with open(file_name) as data_file:
-            data = data_file.read()
-        return ast.literal_eval(data)
 
     def _converKeysToDF(self, input):
         rows = 0

@@ -2,6 +2,12 @@ import logging
 import logging.handlers
 import sys
 import config as cfg
+import os
+
+proj_root = os.environ['ProjectRoot']
+
+config = cfg.getConfig()
+log_file = proj_root + config.get('logging', 'log_file')
 
 LOG_FILENAME = 'logs/application.log'
 FORMAT = '%(asctime)s-%(levelname).4s-%(funcName)s()-%(filename)s:%(lineno).3d : %(message)s'
@@ -20,8 +26,6 @@ logging.basicConfig(filename=LOG_FILENAME,
                     level=logging.DEBUG,
                     datefmt='%m/%d/%Y %I:%M:%S')
 
-
-config = cfg.getConfig()
 
 print_to_screen = config.get('logging', 'print_to_screen')
 # Printing to stdout
