@@ -19,7 +19,7 @@ class SelfSpy:
         self.dbName = self.args['db_name']
         self.stats = ss.Selfstats(self.dbName, self.args)
 
-    def _converKeysToDF(self, input):
+    def _convertToList(self, input):
         rows = 0
         l = list()
         for row in input:
@@ -30,6 +30,10 @@ class SelfSpy:
                    row.process.name, '"%s"' % row.window.title, row.nrkeys,)
             l.append(val)
 
+        return l
+
+    def _converKeysToDF(self, input):
+        l = self._convertToList(input)
         return pd.DataFrame(l)
 
     def getKeys(self):
@@ -42,9 +46,9 @@ class SelfSpy:
         """
         returns data frame for filter_keys
         """
+        df = self._converKeysToDF(self.getKeys())
         colNames = ["RowId",  "StartTime",  "Duration",
                     "Process", "WindowTitle", "keysPressed"]
-        df = self._converKeysToDF(self.getKeys())
         df.columns = colNames
         return df
 
@@ -53,3 +57,13 @@ class SelfSpy:
         returns generator for keys
         """
         return self.stats.filter_clicks()
+
+    def getClicksDF(self):
+        """
+        returns data frame for filter_clicks
+        """
+        df = self._converKeysToDF(self.getKeys())
+        colNames = ["RowId",  "StartTime",  "Duration",
+                    "Process", "WindowTitle", "mouseMovements"]
+        df.columns = colNames
+        return df
