@@ -25,7 +25,7 @@ def example_record():
     query = 'select value from cpu_load_short;'
     i = Influx(db_name)
     i.create_database()
-    i.write(json_body)
+    i.write_json(json_body)
     result = i.query(query)
     print("Result: {0}".format(result))
     i.drop_database()
@@ -43,7 +43,7 @@ def example_data_frame():
     i.create_database()
 
     print("Write DataFrame")
-    i.client.write_points(df, 'demo', protocol=protocol)
+    i.write_data_frame(df, 'demo', protocol=protocol)
 
     # print("Write DataFrame with Tags")
     # i.client.write_points(
