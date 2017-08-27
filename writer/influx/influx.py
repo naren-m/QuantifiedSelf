@@ -1,4 +1,5 @@
 import argparse
+import logger
 
 from influxdb import InfluxDBClient
 
@@ -11,20 +12,24 @@ class Influx:
         self.client = InfluxDBClient(host, port, user, password, dbname)
 
     def create_database(self):
-        print("Create database: " + self.dbname)
+        logger.debug("Create database: %s" + self.dbname)
         self.client.create_database(self.dbname)
 
-    def write(self, data):
-        print("Write points: {0}".format(data))
+    def write_json(self, data):
+        logger.debug("Write points: %s", data)
         self.client.write_points(data)
 
+    def write_data_frame(self, df, measurement, protocol='json'):
+        logger.debug("Write dataframe to measurement: %s", measurement)
+        self.client.write_points(df, measurement, protocol=protocol)
+
     def query(self, query):
-        print("Queying data: " + query)
+        logger.debug("Queying data: " + query)
         result = self.client.query(query)
         return result
 
     def drop_database(self):
-        print("Drop database: " + self.dbname)
+        logger.debug("Drop database: " + self.dbname)
         self.client.drop_database(self.dbname)
 
 
@@ -49,9 +54,9 @@ def main():
     query = 'select value from cpu_load_short;'
     i = Influx(db_name)
     i.create_database()
-    i.write(json_body)
+    i.write_json(json_body)
     result = i.query(query)
-    print("Result: {0}".format(result))
+    logger.debug("Result: %s", result)
     i.drop_database()
 
 

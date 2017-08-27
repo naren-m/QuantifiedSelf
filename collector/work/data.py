@@ -19,15 +19,15 @@ class SelfSpy:
         self.dbName = self.args['db_name']
         self.stats = ss.Selfstats(self.dbName, self.args)
 
-    def _converKeysToDF(self, input):
+    def _convertKeysToDF(self, data):
         rows = 0
         l = list()
-        for row in input:
+        for row in data:
             rows += 1
             val = (row.id, row.started, row.created_at,
                    ss.pretty_seconds(
                        (row.created_at - row.started).total_seconds()),
-                   row.process.name, '"%s"' % row.window.title, row.nrkeys,)
+                   row.process.name, '"%s"' % row.window.title, row.nrkeys)
             l.append(val)
         return pd.DataFrame(l)
 
@@ -45,10 +45,10 @@ class SelfSpy:
         """
         returns data frame for filter_keys
         """
-        df = self._converKeysToDF(self.getKeys())
-        colNames = ["RowId",  "StartTime", "CreatedAt", "Duration",
-                    "Process", "WindowTitle", "keysPressed"]
-        df.columns = colNames
+        df = self._convertKeysToDF(self.getKeys())
+        col_names = ["RowId",  "StartTime", "CreatedAt", "Duration",
+                     "Process", "WindowTitle", "keysPressed"]
+        df.columns = col_names
         return df
 
     def getClicks(self):
@@ -64,20 +64,20 @@ class SelfSpy:
         """
         returns data frame for filter_clicks
         """
-        input = self.getClicks()
+        data = self.getClicks()
         rows = 0
         l = list()
 
-        for row in input:
+        for row in data:
             rows += 1
             # print row.id, row.button, row.press,  row.nrmoves,
             # row.process_id, row.window_id, row.process, row.Duration
             val = (row.id, row.created_at, row.process.name, '"%s"' %
                    row.window.title, row.button, row.press, row.nrmoves,)
             l.append(val)
-        colNames = ["RowId",  "CreatedAt",
-                    "Process", "WindowTitle", "Button", "Pressed", "mouseMovements"]
+        col_names = ["RowId",  "CreatedAt", "Process",
+                     "WindowTitle", "Button", "Pressed", "mouseMovements"]
         df = pd.DataFrame(l)
-        df.columns = colNames
+        df.columns = col_names
 
         return df
