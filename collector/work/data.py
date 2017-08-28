@@ -31,6 +31,25 @@ class SelfSpy:
             l.append(val)
         return pd.DataFrame(l)
 
+    def getKeysDict(self):
+        # Get list of stats and create dict
+        kl = self.getKeys()
+        fields = list()
+        for i in kl:
+            field = dict()
+            field['id'] = int(i.id)
+            field['started'] = i.started
+            field['process'] = str(i.process.name)
+            field['window_title'] = str(
+                u' '.join((i.window.title, " ")).encode('utf-8').strip())
+            field['duration'] = float(
+                (i.created_at - i.started).total_seconds())
+            field['duration_readable'] = str(ss.pretty_seconds(
+                (i.created_at - i.started).total_seconds()))
+            field['keys'] = int(i.nrkeys)
+            fields.append(field)
+        return fields
+
     def getKeys(self):
         """
         returns generator for keys

@@ -12,19 +12,15 @@ class Influx:
         self.client = InfluxDBClient(host, port, user, password, dbname)
 
     def create_database(self):
-        logger.debug("Create database: %s" + self.dbname)
         self.client.create_database(self.dbname)
 
     def write_json(self, data):
-        logger.debug("Write points: %s", data)
         self.client.write_points(data)
 
     def write_data_frame(self, df, measurement, protocol='json'):
-        logger.debug("Write dataframe to measurement: %s", measurement)
         self.client.write_points(df, measurement, protocol=protocol)
 
     def query(self, query):
-        logger.debug("Queying data: " + query)
         result = self.client.query(query)
         return result
 
