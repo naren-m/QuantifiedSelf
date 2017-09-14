@@ -1,13 +1,14 @@
 
-import collector.work.data as d
+# import collector.work.data as data
+from data import get_params, SelfSpy
 import writer.influx.influx as influx
 
 
 def loadPastNDays(nDays):
-    params = d.get_params("parameters.json")
+    params = get_params("parameters.json")
     params["back"] = [nDays, 'd']
     print params
-    selfStats = d.SelfSpy(params)
+    selfStats = SelfSpy(params)
 
     # Get list of stats and create dict
     # RowId	StartTime	CreatedAt	Duration	Process	WindowTitle	keysPressed
@@ -42,4 +43,4 @@ def loadPastNDays(nDays):
         i.write_json(ld)
 
 
-loadPastNDays(500)
+loadPastNDays('600')
