@@ -1,0 +1,37 @@
+version: '3'
+
+volumes:
+  grafana_data: {}
+  influx_data: {}
+
+networks:
+  quantified_self:
+
+services:
+  grafana:
+    container_name: quantified_self_grafana
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - ./data/grafana:/var/lib/grafana
+      - grafana_data:/grafana
+    links:
+      - influxdb
+    networks:
+      - quantified_self
+
+  influxdb:
+    container_name: quantified_self_influxdb
+    image: influxdb
+    ports:
+      - 8083:8083
+      - 8086:8086
+    volumes:
+      - ./influxdb.conf:/etc/influxdb/influxdb.conf:ro
+      - ./data/influxdb:/var/lib/influxdb
+      - influx_data:/data/influxdb
+    networks:
+      - quantified_self
+    environment:
+      - INFLUXDB_ADMIN_ENABLED=true
