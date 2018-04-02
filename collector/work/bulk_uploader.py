@@ -11,7 +11,7 @@ def loadPastNDays(nDays):
     selfStats = SelfSpy(params)
 
     # Get list of stats and create dict
-    # RowId	StartTime	CreatedAt	Duration	Process	WindowTitle	keysPressed
+    # RowId	StartTime CreatedAt	Duration Process WindowTitle keysPressed
     fields = selfStats.getKeysDict()
 
     measurement = "keys"
